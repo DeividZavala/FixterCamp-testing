@@ -29,3 +29,6 @@ Comenzamos con la recta final de nuestro curso, aprenderemos a testear action cr
 ## Semana 4
 
 En la ultima semana aprenderemos una de la herramientas por excelencia para hacer test de end to end, `Cypress`, con esta herramienta podremos probar flujos completos de nuestra aplicación com podria ser un login, creacion de alguna orden o cualquier flujo que nuestra aplicación contenga.
+
+Espero que este curso sea de mucha utilidad para todos ustedes.
+Comencemos.
