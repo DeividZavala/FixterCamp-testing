@@ -8,6 +8,7 @@ El testing de nuestras aplicaciones debe de ser unos de los puntos que tenemos q
 - Asegurarnos que nuestro código funcione como debe de funcionar.
 - Asegurarnos que estemos cubriendo los posibles casos de error
 - Validad que nuestro código cumpla con la lógica de negocio.
+- Encontrar fallos o posibles fallos desde la etapa de construcción así como en nuevos despliegues.
 
 Algo que es importante a resaltar es que el testear nuestra aplicación no necesariamente significa hacer que nuestra app no falle, de hecho es todo lo contrario, es asegurarnos de que a pesar de un fallo, nuestra aplicaciñon se comporte como nosotros queremos que se comporte.
 
