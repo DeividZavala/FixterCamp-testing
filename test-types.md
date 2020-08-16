@@ -1,3 +1,5 @@
+<img alt="logo fixter" width="300" src="https://fixter.camp/static/media/geek_completo.7e1e87a7.png" />
+
 # Tipos de Test
 
 Cuando empezamos a escuchar sobre testing, terminos como `test unitario` o `end to end` pueden ser muy recurrentes pero no siempre sabes a que se refieren estos terminos. En esta lección vamos a por fin aprenderder de que se tratan.
