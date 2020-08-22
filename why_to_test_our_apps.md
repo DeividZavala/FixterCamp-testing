@@ -1,6 +1,6 @@
 <img alt="logo fixter" width="300" src="https://fixter.camp/static/media/geek_completo.7e1e87a7.png" />
 
-# ¿Pero, por qué testear mi app?
+# ¿Qué es Testing? y ¿Por qué testear mi app?
 
 El testing de nuestras aplicaciones debe de ser unos de los puntos que tenemos que tener siempre presentes, tristemente es una practica que no siempre es una de nuestras prioridades ya que, o no sabemos como abordarlo o simplemente decidimos dejarlo para cuando nuestra aplicación este mucho más avanzada, sin embargo, probar nuestra app nos va a traer muchas ventajas por ejemplo:
 
