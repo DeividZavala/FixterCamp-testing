@@ -37,7 +37,7 @@ $ npm i -D jest
 
 **package.json scripts**
 
-```json
+```
 {
   // ...package.json config
   "scripts": {
