@@ -4,15 +4,15 @@
 
 Para esta lección vamos a instalar y configurar jest en un proyecto simple hecho por nosotros desde cero, tranquilo, será un proyecto muy sencillo.
 
-> Nota: De aquí en adelante asumiremos que ya tienes instalado nodejs, de no ser así, puedes descargarlo [aquí](https://nodejs.org/es/), sin embargo te sugerimos intalarlo mediante [nvm](https://github.com/nvm-sh/nvm), un manejador de versiones de nodejs.
+> Nota: De aquí en adelante asumiremos que ya tienes instalado nodejs, de no ser así, puedes descargarlo [aquí](https://nodejs.org/es/), sin embargo, te sugerimos intalarlo mediante [nvm](https://github.com/nvm-sh/nvm), un manejador de versiones de nodejs.
 
 ### Creando el proyecto
 
 Nuestro proyecto estará construido de la siguiente manera:
 
-1. Crearemos una carpeta donde estaran todo los archivos de nuestro proyecto con el comando `mkdir`, en mi caso lo nombraré como `jest-basics`.
+1. Crearemos una carpeta donde estarán todo los archivos de nuestro proyecto con el comando `mkdir`, en mi caso lo nombraré como `jest-basics`.
 2. Con el comando `yarn init` o `npm init` crearemos un package.json.
-3. Crearemos un archivo llamado `app.test.js` dentro nuestra carpeta y a la misma altura de nuestro package.json.
+3. Crearemos un archivo llamado `app.test.js` dentro nuestra carpeta y a la misma altura de nuestro `package.json`.
 
 Hasta este momento debemos tener una estructura como esta:
 
@@ -23,7 +23,7 @@ Hasta este momento debemos tener una estructura como esta:
     └── app.test.js
 ```
 
-Una vez creado nuestro proyecto comenzaremos la configuración a continuación los comandos y código que usaremos que usaremos.
+Una vez creado nuestro proyecto comenzaremos la configuración, a continuación los comandos y código que usaremos.
 
 **Instalación de jest**
 
@@ -35,7 +35,7 @@ $ yarn add -D jest
 $ npm i -D jest
 ```
 
-**Package json scrips**
+**package.json scripts**
 
 ```json
 {
