@@ -2,9 +2,9 @@
 
 # Tipos de Test
 
-Cuando empezamos a escuchar sobre testing, terminos como `test unitario` o `end to end` pueden ser muy recurrentes pero no siempre sabes a que se refieren estos terminos. En esta lección vamos a por fin aprenderder de que se tratan.
+Cuando empezamos a escuchar sobre testing, términos como `test unitario` o `end to end` pueden ser muy recurrentes, pero no siempre sabes a qué se refiere. En esta lección vamos a, por fin, aprender de qué se tratan.
 
-Dentro del testing hay difirentes formas en las que vamos pensar o estructurar nuestras pruebas dependiendo y teniendo bien presente que es lo que queremos testear, eso puede ir desde casos muy simples como solo probar una funcion utilitaria de nuestro código o hasta probar todo un flujo de nuestra aplicación, con el proposito de identificar mejor cual es la intencion de un test, estos se segmentan en 3 grupo:
+Dentro del testing hay diferentes formas en las que vamos pensar o estructurar nuestras pruebas dependiendo y teniendo bien presente que es lo que queremos testear, eso puede ir desde casos muy simples como solo probar una funcion utilitaria de nuestro código o hasta probar todo un flujo de nuestra aplicación. Con el proposito de identificar mejor cuál es la intencion de un test, estos se segmentan en 3 grupos:
 
 - Test Unitarios
 - Test de Implementación
@@ -14,7 +14,7 @@ Dentro del testing hay difirentes formas en las que vamos pensar o estructurar n
 
 ## Tests unitarios
 
-Este tipo de test se caracteriza por prubas que abarcan unicamente una pieza de tu código a la vez, es decir, sin importar la cantidad de funciones o componentes que tengamos y como se comporten en conjunto con otros bloques de código, unicamente probaremos que ese elemento en particular que estamos probando, se comporte como debe de hacerlo.
+Este tipo de test se caracteriza por prubas que abarcan unicamente una pieza de tu código a la vez, es decir, sin importar la cantidad de funciones o componentes que tengamos y cómo se comporten en conjunto con otros bloques de código, unicamente probaremos que ese elemento en particular, se comporte como debe de hacerlo.
 
 # Tests de Integración
 
