@@ -1,24 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useRef } from "react";
+import "./App.css";
 
 function App() {
+  const [elements, setElements] = useState([]);
+  const [error, setError] = useState();
+  const inputRef = useRef();
+  const addElement = () => {
+    const { value } = inputRef.current;
+    if (!value) return setError("Debes agregar texto");
+    setElements((prev) => [...prev, value]);
+    inputRef.current.value = "";
+    setError(undefined);
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {elements.length ? (
+        <ul>
+          {elements.map((element, i) => (
+            <li key={i}>{element}</li>
+          ))}
+        </ul>
+      ) : (
+        <h1>Sin elementos para mostrar</h1>
+      )}
+      <div>
+        <input ref={inputRef} placeholder="Ingresa el texto" />
+        <button onClick={addElement}>agregar</button>
+        {error && <p>{error}</p>}
+      </div>
     </div>
   );
 }
