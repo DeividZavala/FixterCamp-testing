@@ -5,6 +5,7 @@ function App() {
   const [elements, setElements] = useState([]);
   const [error, setError] = useState();
   const inputRef = useRef();
+
   const addElement = () => {
     const { value } = inputRef.current;
     if (!value) return setError("Debes agregar texto");
@@ -12,6 +13,7 @@ function App() {
     inputRef.current.value = "";
     setError(undefined);
   };
+
   return (
     <div className="App">
       {elements.length ? (

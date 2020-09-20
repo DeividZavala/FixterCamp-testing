@@ -1,15 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-//import App from "./App";
-import Basic from "./Basic";
+import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-
-const data = ["test", "test 1"];
 
 ReactDOM.render(
   <React.StrictMode>
-    <Basic data={data} />
+    <App />
   </React.StrictMode>,
   document.getElementById("root")
 );
