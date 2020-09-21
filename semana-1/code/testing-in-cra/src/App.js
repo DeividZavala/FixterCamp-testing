@@ -1,8 +1,8 @@
 import React, { useState, useRef } from "react";
 import "./App.css";
 
-function App() {
-  const [elements, setElements] = useState([]);
+function App({ data = [] }) {
+  const [elements, setElements] = useState(data);
   const [error, setError] = useState();
   const inputRef = useRef();
 

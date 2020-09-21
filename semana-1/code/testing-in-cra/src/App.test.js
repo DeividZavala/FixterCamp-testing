@@ -1,6 +1,7 @@
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import renderer from "react-test-renderer";
 import App from "./App";
 
 describe("<App/>", () => {
@@ -35,5 +36,17 @@ describe("<App/>", () => {
     render(<App />);
     userEvent.click(screen.getByRole("button"));
     expect(screen.getByText("Debes agregar texto")).toBeInTheDocument();
+  });
+});
+
+describe("<App /> snapshot", () => {
+  it("<App /> should match snapshot when data", () => {
+    const data = ["test", "test 2"];
+    const result = renderer.create(<App data={data} />).toJSON();
+    expect(result).toMatchSnapshot();
+  });
+  it("<App /> should match snapshot if no data", () => {
+    const result = renderer.create(<App />).toJSON();
+    expect(result).toMatchSnapshot();
   });
 });

@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> snapshot <App /> should match snapshot if no data 1`] = `
+<div
+  className="App"
+>
+  <h1>
+    Sin elementos para mostrar
+  </h1>
+  <div>
+    <input
+      placeholder="Ingresa el texto"
+    />
+    <button
+      onClick={[Function]}
+    >
+      agregar
+    </button>
+  </div>
+</div>
+`;
+
+exports[`<App /> snapshot <App /> should match snapshot when data 1`] = `
+<div
+  className="App"
+>
+  <ul>
+    <li>
+      test
+    </li>
+    <li>
+      test 2
+    </li>
+  </ul>
+  <div>
+    <input
+      placeholder="Ingresa el texto"
+    />
+    <button
+      onClick={[Function]}
+    >
+      agregar
+    </button>
+  </div>
+</div>
+`;
