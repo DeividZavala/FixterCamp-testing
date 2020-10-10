@@ -1,15 +1,18 @@
 import React, { useState, useRef } from "react";
+import useQueue from "./hooks/useQueue";
 import "./App.css";
 
 function App({ data = [] }) {
   const [elements, setElements] = useState(data);
   const [error, setError] = useState();
   const inputRef = useRef();
+  const { add } = useQueue();
 
   const addElement = () => {
     const { value } = inputRef.current;
     if (!value) return setError("Debes agregar texto");
     setElements((prev) => [...prev, value]);
+    add(value);
     inputRef.current.value = "";
     setError(undefined);
   };
