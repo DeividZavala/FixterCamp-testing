@@ -6,13 +6,17 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import UIkit from "uikit";
 import Icons from "uikit/dist/js/uikit-icons";
+import { Provider } from "react-redux";
+import store from "./redux/store";
 
 // loads the Icon plugin
 UIkit.use(Icons);
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );
