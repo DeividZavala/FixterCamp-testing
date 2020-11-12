@@ -14,3 +14,13 @@ code {
 .trash {
   color: #f0506e;
 }
+
+.items-quantity {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.items-quantity button {
+  padding: 0 15px;
+}

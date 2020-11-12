@@ -20,6 +20,12 @@ export default function reducer(state = initialState, action) {
         status: "finished",
         data: normalizeData(action.payload),
       };
+    case FETCH_PRODUCTS_ERROR:
+      return {
+        ...state,
+        status: "error",
+        error: "Algo salió mal",
+      };
     default:
       return state;
   }
@@ -35,9 +41,8 @@ export const fetchProductsSuccess = (payload) => ({
   payload,
 });
 
-export const fetchProductsError = (error) => ({
+export const fetchProductsError = () => ({
   type: FETCH_PRODUCTS_ERROR,
-  error,
 });
 
 // thunks
@@ -48,5 +53,5 @@ export const getProducts = () => (dispatch) => {
     .then((res) => {
       dispatch(fetchProductsSuccess(res.data));
     })
-    .catch((res) => dispatch(fetchProductsError(res.response)));
+    .catch(() => dispatch(fetchProductsError()));
 };

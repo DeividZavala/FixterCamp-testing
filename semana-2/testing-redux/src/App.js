@@ -10,6 +10,8 @@ import "./App.css";
 function App() {
   const dispatch = useDispatch();
   const products = useSelector((state) => denormalizeData(state.products.data));
+  const status = useSelector((state) => state.products.status);
+  const error = useSelector((state) => state.products.error);
 
   useEffect(() => {
     dispatch(getProducts());
@@ -22,11 +24,22 @@ function App() {
         <div className="uk-container uk-container-expand">
           <div className="uk-grid uk-grid-small uk-grid-match">
             <div className="uk-width-2-3">
-              <div className="uk-grid uk-child-width-1-3 uk-grid-small uk-grid-match">
-                {products.map((prod) => (
-                  <Card {...prod} />
-                ))}
-              </div>
+              {status === "fetching" && <div uk-spinner="ratio: 6"></div>}
+              {status === "finished" && (
+                <div className="uk-grid uk-child-width-1-3 uk-grid-small uk-grid-match">
+                  {products.map((prod, index) => (
+                    <Card key={index} {...prod} />
+                  ))}
+                </div>
+              )}
+              {status === "error" && (
+                <div
+                  className="uk-alert-danger uk-flex uk-flex-middle uk-flex-center"
+                  uk-alert="true"
+                >
+                  <p>{error}</p>
+                </div>
+              )}
             </div>
             <div className="uk-width-1-3">
               <Cart />

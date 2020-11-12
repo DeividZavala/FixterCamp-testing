@@ -11,6 +11,9 @@ const Card = ({ image, price, name }) => {
           <h3 className="uk-card-title">{name}</h3>
           <p>${price}</p>
         </div>
+        <div className="uk-card-footer">
+          <button className="uk-button uk-button-primary">Agregar</button>
+        </div>
       </div>
     </div>
   );

@@ -19,7 +19,14 @@ const CartItem = () => {
             <time datetime="2016-04-01T19:00">April 01, 2016</time>
           </p>
         </div>
-        <div className="uk-width-auto uk-margin-medium-right" ><span className="trash" uk-icon="icon:trash;ratio:1.5"></span></div>
+        <div className="uk-width-1-4 items-quantity">
+          <button className="uk-button">-</button>
+          <span>0</span>
+          <button className="uk-button">+</button>
+        </div>
+        <div className="uk-width-auto uk-margin-medium-right">
+          <span className="trash" uk-icon="icon:trash;ratio:1.5"></span>
+        </div>
       </div>
     </div>
   );
