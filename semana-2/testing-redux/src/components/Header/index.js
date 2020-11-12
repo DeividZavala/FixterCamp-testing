@@ -1,6 +1,6 @@
 import React from "react";
 
-const Header = () => {
+const Header = ({ items }) => {
   return (
     <nav className="uk-navbar-container" uk-navbar="true">
       <div className="uk-navbar-left">
@@ -13,7 +13,7 @@ const Header = () => {
         <ul className="uk-navbar-nav">
           <li className="uk-margin-medium-right">
             <span className="cart" uk-icon="icon: cart;ratio:2">
-              <span className="uk-badge">0</span>
+              <span className="uk-badge">{items}</span>
             </span>
           </li>
         </ul>

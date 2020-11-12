@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Card from "./components/Card";
 import Cart from "./components/Cart";
 import { getProducts } from "./redux/productDuck";
+import { getCart } from "./redux/cartDuck";
 import { denormalizeData } from "./utils";
 import "./App.css";
 
@@ -12,14 +13,16 @@ function App() {
   const products = useSelector((state) => denormalizeData(state.products.data));
   const status = useSelector((state) => state.products.status);
   const error = useSelector((state) => state.products.error);
+  const cartItems = useSelector((state) => denormalizeData(state.cart.data));
 
   useEffect(() => {
     dispatch(getProducts());
+    dispatch(getCart());
   }, [dispatch]);
 
   return (
     <div className="App">
-      <Header />
+      <Header items={cartItems.length} />
       <div className="uk-section">
         <div className="uk-container uk-container-expand">
           <div className="uk-grid uk-grid-small uk-grid-match">
@@ -42,7 +45,7 @@ function App() {
               )}
             </div>
             <div className="uk-width-1-3">
-              <Cart />
+              <Cart items={cartItems} />
             </div>
           </div>
         </div>
