@@ -5,9 +5,8 @@ const FETCH_CART = "cart/FETCH_CART";
 const FETCH_CART_SUCCESS = "cart/FETCH_CART_SUCCESS";
 const FETCH_CART_ERROR = "cart/FETCH_CART_ERROR";
 
-const ADD_ITEM = "cart/ADD_ITEM";
-const REMOVE_ITEM = "cart/REMOVE_ITEM";
-const DELETE_PRODUCT = "cart/DELETE_PRODUCT";
+const EDIT_CART = "cart/EDIT_CART";
+const EDIT_CART_ERROR = "cart/EDIT_CART_ERROR";
 
 const initialState = {
   status: "",
@@ -21,7 +20,6 @@ export default function reducer(state = initialState, action) {
     case FETCH_CART_SUCCESS:
       return {
         ...state,
-        status: "finished",
         data: normalizeData(action.payload),
       };
     case FETCH_CART_ERROR:
@@ -29,6 +27,12 @@ export default function reducer(state = initialState, action) {
         ...state,
         status: "error",
         error: "Algo salió mal",
+      };
+    case EDIT_CART:
+      return {
+        ...state,
+        status: "finished",
+        data: normalizeData(action.payload),
       };
     default:
       return state;
@@ -49,18 +53,13 @@ export const fetchCartError = () => ({
   type: FETCH_CART_ERROR,
 });
 
-export const ItemAdded = (payload) => ({
-  type: ADD_ITEM,
+export const cartItemsEdited = (payload) => ({
+  type: EDIT_CART,
   payload,
 });
 
-export const ItemRemoved = (payload) => ({
-  type: REMOVE_ITEM,
-  payload,
-});
-
-export const ItemDeleted = (payload) => ({
-  type: DELETE_PRODUCT,
+export const cartItemsEditedError = (payload) => ({
+  type: EDIT_CART_ERROR,
   payload,
 });
 
@@ -69,8 +68,14 @@ export const getCart = () => (dispatch) => {
   dispatch(fetchCart());
   return axios
     .get("http://localhost:4000/cart")
-    .then((res) => {
-      dispatch(fetchCartSuccess(res.data.products));
-    })
+    .then((res) => dispatch(fetchCartSuccess(res.data.products)))
     .catch(() => dispatch(fetchCartError()));
+};
+
+export const editCart = (order) => (dispatch) => {
+  console.log(order);
+  return axios
+    .patch("http://localhost:4000/cart", order)
+    .then((res) => dispatch(cartItemsEdited(res.data.products)))
+    .catch((error) => dispatch(cartItemsEditedError()));
 };

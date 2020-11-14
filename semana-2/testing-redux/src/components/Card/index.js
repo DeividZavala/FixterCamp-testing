@@ -1,6 +1,6 @@
 import React from "react";
 
-const Card = ({ image, price, name }) => {
+const Card = ({ id, image, price, name, addItem }) => {
   return (
     <div>
       <div className="uk-card uk-card-default uk-margin-medium-bottom">
@@ -12,7 +12,12 @@ const Card = ({ image, price, name }) => {
           <p>${price}</p>
         </div>
         <div className="uk-card-footer">
-          <button className="uk-button uk-button-primary">Agregar</button>
+          <button
+            onClick={() => addItem({ id, image, price, name }, "add")}
+            className="uk-button uk-button-primary"
+          >
+            Agregar
+          </button>
         </div>
       </div>
     </div>
