@@ -12,6 +12,15 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
+### `yarn api`
+
+Runs the api for the project.<br />
+Open [http://localhost:4000](http://localhost:4000) to view it in the browser.
+
+This api use [json-server](https://github.com/typicode/json-server). 
+The page will reload if you make edits.<br />
+You will also see any lint errors in the console.
+
 ### `yarn test`
 
 Launches the test runner in the interactive watch mode.<br />
