@@ -1,8 +1,14 @@
-jest.mock('../utils');
-import axios from 'axios';
+import React from 'react';
+import { renderWithProvider } from '../jest/utils';
+import App from '../App';
+import createMockStore from 'redux-mock-store';
+import thunk from 'redux-thunk';
 
-import { normalizeData } from '../utils';
+const mockStore = createMockStore([thunk]);
 
-test('test mocks', () => {
-  expect(normalizeData()).toEqual({ 1: {}, 2: {} });
+describe('<App /> component', () => {
+  test('Render correctly', () => {
+    const store = mockStore({ products: { data: [] }, cart: { data: [] } });
+    renderWithProvider(<App />, { store });
+  });
 });
