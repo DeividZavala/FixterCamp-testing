@@ -30,6 +30,7 @@ const CartItem = ({ id, name, price, image, quantity = 1, editCart }) => {
         </div>
         <div className='uk-width-auto uk-margin-medium-right'>
           <span
+            role='remove'
             onClick={() => editCart({ id }, 'delete')}
             className='trash'
             uk-icon='icon:trash;ratio:1.5'

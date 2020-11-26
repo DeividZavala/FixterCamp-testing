@@ -1,0 +1,178 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> component Render correctly 1`] = `
+<div
+  className="App"
+>
+  <nav
+    className="uk-navbar-container"
+    uk-navbar="true"
+  >
+    <div
+      className="uk-navbar-left"
+    >
+      <a
+        className="uk-navbar-item uk-logo"
+        href="/"
+      >
+        FixterCommerce
+      </a>
+    </div>
+    <div
+      className="uk-navbar-right"
+    >
+      <ul
+        className="uk-navbar-nav"
+      >
+        <li
+          className="uk-margin-medium-right"
+        >
+          <span
+            className="cart"
+            uk-icon="icon: cart;ratio:2"
+          >
+            <span
+              className="uk-badge"
+            >
+              2
+            </span>
+          </span>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div
+    className="uk-section"
+  >
+    <div
+      className="uk-container uk-container-expand"
+    >
+      <div
+        className="uk-grid uk-grid-small uk-grid-match"
+      >
+        <div
+          className="uk-width-2-3"
+        >
+          <div
+            className="uk-grid uk-child-width-1-3 uk-grid-small uk-grid-match"
+          >
+            <div>
+              <div
+                className="uk-card uk-card-default uk-margin-medium-bottom"
+              >
+                <div
+                  className="uk-card-media-top"
+                >
+                  <img
+                    alt="XBSX Call of Duty Black Ops: Cold War - Standard"
+                    src="https://images-na.ssl-images-amazon.com/images/I/814z4KAsOcL._AC_UL160_SR160,160_.jpg"
+                  />
+                </div>
+                <div
+                  className="uk-card-body uk-padding-small"
+                >
+                  <h3
+                    className="uk-card-title"
+                  >
+                    XBSX Call of Duty Black Ops: Cold War - Standard
+                  </h3>
+                  <p>
+                    $
+                    1619.00
+                  </p>
+                </div>
+                <div
+                  className="uk-card-footer"
+                >
+                  <button
+                    className="uk-button uk-button-primary"
+                    onClick={[Function]}
+                  >
+                    Agregar
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="uk-width-1-3"
+        >
+          <div
+            className="uk-box-shadow-small uk-padding-small"
+          >
+            <div
+              className="uk-box-shadow-small uk-margin-small-bottom"
+            >
+              <div
+                className="uk-grid-small uk-flex-middle"
+                uk-grid="true"
+              >
+                <div
+                  className="uk-width-auto"
+                >
+                  <img
+                    alt="XBSX Call of Duty Black Ops: Cold War - Standard"
+                    className=""
+                    height="100"
+                    src="https://images-na.ssl-images-amazon.com/images/I/814z4KAsOcL._AC_UL160_SR160,160_.jpg"
+                    width="100"
+                  />
+                </div>
+                <div
+                  className="uk-width-expand uk-text-left"
+                >
+                  <h3
+                    className="uk-card-title uk-margin-remove-bottom uk-text-truncate"
+                  >
+                    XBSX Call of Duty Black Ops: Cold War - Standard
+                  </h3>
+                  <p
+                    className="uk-text-meta uk-margin-remove-top"
+                  >
+                    <span
+                      className="uk-text-meta"
+                    >
+                      Subtotal: $
+                      3238
+                    </span>
+                  </p>
+                </div>
+                <div
+                  className="uk-width-1-4 items-quantity"
+                >
+                  <button
+                    className="uk-button"
+                    onClick={[Function]}
+                  >
+                    -
+                  </button>
+                  <span>
+                    2
+                  </span>
+                  <button
+                    className="uk-button"
+                    onClick={[Function]}
+                  >
+                    +
+                  </button>
+                </div>
+                <div
+                  className="uk-width-auto uk-margin-medium-right"
+                >
+                  <span
+                    className="trash"
+                    onClick={[Function]}
+                    role="remove"
+                    uk-icon="icon:trash;ratio:1.5"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
