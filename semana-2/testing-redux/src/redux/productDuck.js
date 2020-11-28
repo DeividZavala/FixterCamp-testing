@@ -1,9 +1,9 @@
 import axios from 'axios';
 import { normalizeData } from '../utils';
 
-const FETCH_PRODUCTS = 'products/FETCH_PRODUCTS';
-const FETCH_PRODUCTS_SUCCESS = 'products/FETCH_PRODUCTS_SUCCESS';
-const FETCH_PRODUCTS_ERROR = 'products/FETCH_PRODUCTS_ERROR';
+export const FETCH_PRODUCTS = 'products/FETCH_PRODUCTS';
+export const FETCH_PRODUCTS_SUCCESS = 'products/FETCH_PRODUCTS_SUCCESS';
+export const FETCH_PRODUCTS_ERROR = 'products/FETCH_PRODUCTS_ERROR';
 
 const initialState = {
   status: '',
@@ -36,6 +36,7 @@ export default function reducer(state = initialState, action) {
 export const fetchProducts = () => ({
   type: FETCH_PRODUCTS,
 });
+
 export const fetchProductsSuccess = payload => ({
   type: FETCH_PRODUCTS_SUCCESS,
   payload,
