@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+// considering we have the service created
+import { getTodos } from "./services/todos";
 
 function App() {
+  const [todos, setTodos] = useState([]);
+  const [error, setError] = useState();
+
+  useEffect(() => {
+    getTodos()
+      .then((res) => {
+        const { data: todos } = res;
+        setTodos(todos);
+      })
+      .catch((err) => {
+        setError(err?.response?.data?.message);
+      });
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {error && <h1>{error}</h1>}
+      <ul>
+        {todos.map((todo, i) => (
+          <li key={i}>{todo.body}</li>
+        ))}
+      </ul>
     </div>
   );
 }
