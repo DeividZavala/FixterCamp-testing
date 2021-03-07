@@ -1,0 +1,59 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "XBSX Call of Duty Black Ops: Cold War - Standard",
+      "price": "1619.00",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/814z4KAsOcL._AC_UL160_SR160,160_.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Consola Xbox Series S 512 gb SSD sin lector de disco",
+      "price": "8499.00",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/81VdHXDp6bL._AC_UL160_SR160,160_.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Control Inalámbrico Xbox - Shock Blue",
+      "price": "1529.00",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/71K-lrlmZeL._AC_UL160_SR160,160_.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Consola PlayStation 5 - PlayStation 5 - Standard Edition",
+      "price": "13999.00",
+      "image": "https://m.media-amazon.com/images/I/51vA4ASqhVL._AC_UY218_.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Control Inalámbrico DualSense - Standard Edition",
+      "price": "1619.00",
+      "image": "https://m.media-amazon.com/images/I/51ZIgi6rwSL._AC_UY218_.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Spider-Man: Miles Morales - Ultimate Edition - PlayStation 5",
+      "price": "1169.00",
+      "image": "https://m.media-amazon.com/images/I/81tR0dlRpNL._AC_UY218_.jpg"
+    }
+  ],
+  "cart": {
+    "id": 1,
+    "products": [
+      {
+        "id": 1,
+        "image": "https://images-na.ssl-images-amazon.com/images/I/814z4KAsOcL._AC_UL160_SR160,160_.jpg",
+        "price": "1619.00",
+        "name": "XBSX Call of Duty Black Ops: Cold War - Standard",
+        "quantity": 1
+      },
+      {
+        "id": 2,
+        "image": "https://images-na.ssl-images-amazon.com/images/I/81VdHXDp6bL._AC_UL160_SR160,160_.jpg",
+        "price": "8499.00",
+        "name": "Consola Xbox Series S 512 gb SSD sin lector de disco",
+        "quantity": 1
+      }
+    ]
+  }
+}
