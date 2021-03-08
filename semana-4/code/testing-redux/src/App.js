@@ -52,7 +52,10 @@ function App() {
             <div className='uk-width-2-3'>
               {status === 'fetching' && <div uk-spinner='ratio: 6'></div>}
               {status === 'finished' && (
-                <div className='uk-grid uk-child-width-1-3 uk-grid-small uk-grid-match'>
+                <div
+                  id='products-container'
+                  className='uk-grid uk-child-width-1-3 uk-grid-small uk-grid-match'
+                >
                   {products.map((prod, index) => (
                     <Card key={index} {...prod} addItem={handleEdit} />
                   ))}
