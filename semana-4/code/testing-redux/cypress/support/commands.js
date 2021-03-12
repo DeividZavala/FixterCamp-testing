@@ -25,9 +25,9 @@
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
 
 
-Cypress.Commands.add("setupAndVisit", (productsData = {fixture:"products"}) => {
+Cypress.Commands.add("setupAndVisit", (productsData = {fixture:"products"}, cartObj = {fixture:"cart"}) => {
     cy.intercept("GET", "/products", productsData).as("load")
-    cy.intercept("GET", "/cart", {fixture:"cart"}).as("cart")
+    cy.intercept("GET", "/cart", cartObj).as("cart")
 
     cy.visit("/")
 

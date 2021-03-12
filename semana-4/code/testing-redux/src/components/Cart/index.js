@@ -1,9 +1,9 @@
-import React from "react";
-import CartItem from "../CartItem";
+import React from 'react';
+import CartItem from '../CartItem';
 
 const Cart = ({ items, editCart }) => {
   return (
-    <div className="uk-box-shadow-small uk-padding-small">
+    <div id='cart' className='uk-box-shadow-small uk-padding-small'>
       {items.map((item, index) => (
         <CartItem key={index} {...item} editCart={editCart} />
       ))}
