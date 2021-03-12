@@ -1,5 +1,5 @@
 describe("Fixtercommerce", () => {
-    it("should visit the page", ()=>{
+    it("should visit the page and render products and cart items", ()=>{
         cy.setupAndVisit()
         cy.get("#products-container > div").should("have.length", 6)
     })
