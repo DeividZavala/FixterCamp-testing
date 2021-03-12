@@ -1,11 +1,10 @@
 describe("Fixtercommerce", () => {
     it("should visit the page", ()=>{
-
-        cy.intercept("GET", "/products", {fixture:"products"}).as("load")
-
-        cy.visit("/")
-
-        cy.wait("@load")
+        cy.setupAndVisit()
         cy.get("#products-container > div").should("have.length", 6)
+    })
+    it("should show empty message if no products", () => {
+        cy.setupAndVisit([])
+        cy.get('.uk-alert-primary').should("be.visible")
     })
 })

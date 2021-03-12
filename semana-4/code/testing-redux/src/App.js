@@ -17,10 +17,8 @@ function App() {
   const items = denormalizeData(cartItems);
 
   useEffect(() => {
-    setTimeout(() => {
-      if (status === '') dispatch(getProducts());
-      if (status === '') dispatch(getCart());
-    }, 5000);
+    if (status === '') dispatch(getProducts());
+    if (status === '') dispatch(getCart());
   }, [dispatch]);
 
   const handleEdit = (item, type) => {
@@ -69,6 +67,14 @@ function App() {
                   uk-alert='true'
                 >
                   <p>{error}</p>
+                </div>
+              )}
+              {status === 'finished' && products.length === 0 && (
+                <div
+                  className='uk-alert-primary uk-flex uk-flex-middle uk-flex-center'
+                  uk-alert='true'
+                >
+                  <p>Por el momento no hay productos para mostrar</p>
                 </div>
               )}
             </div>

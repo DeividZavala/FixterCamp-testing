@@ -23,3 +23,13 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+
+
+Cypress.Commands.add("setupAndVisit", (productsData = {fixture:"products"}) => {
+    cy.intercept("GET", "/products", productsData).as("load")
+    cy.intercept("GET", "/cart", {fixture:"cart"}).as("cart")
+
+    cy.visit("/")
+
+    cy.wait(["@load", "@cart"])
+})
