@@ -17,8 +17,10 @@ function App() {
   const items = denormalizeData(cartItems);
 
   useEffect(() => {
-    if (status === '') dispatch(getProducts());
-    if (status === '') dispatch(getCart());
+    setTimeout(() => {
+      if (status === '') dispatch(getProducts());
+      if (status === '') dispatch(getCart());
+    }, 5000);
   }, [dispatch]);
 
   const handleEdit = (item, type) => {
