@@ -21,7 +21,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "api": "json-server --watch db.json --port 4000",
-    "api:test": "json-server --watch db-tests.json --port 4000"
+    "api:test": "json-server --watch db-tests.json --port 4000",
+    "cypress": "cypress open",
+    "cypress:all": "cypress run"
   },
   "eslintConfig": {
     "extends": "react-app"
