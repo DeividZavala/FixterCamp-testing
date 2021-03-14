@@ -3,3 +3,4 @@
 
 # Except src folder:
 !/src
+!/cypress

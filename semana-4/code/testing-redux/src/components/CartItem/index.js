@@ -20,7 +20,7 @@ const CartItem = ({ id, name, price, image, quantity = 1, editCart }) => {
           >
             -
           </button>
-          <span>{quantity}</span>
+          <span className='quantity'>{quantity}</span>
           <button
             onClick={() => editCart({ id, name, price, image, quantity }, 'add')}
             className='uk-button'

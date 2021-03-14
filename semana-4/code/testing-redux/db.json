@@ -39,28 +39,6 @@
   ],
   "cart": {
     "id": 1,
-    "products": [
-      {
-        "id": 1,
-        "image": "https://images-na.ssl-images-amazon.com/images/I/814z4KAsOcL._AC_UL160_SR160,160_.jpg",
-        "price": "1619.00",
-        "name": "XBSX Call of Duty Black Ops: Cold War - Standard",
-        "quantity": 1
-      },
-      {
-        "id": 2,
-        "image": "https://images-na.ssl-images-amazon.com/images/I/81VdHXDp6bL._AC_UL160_SR160,160_.jpg",
-        "price": "8499.00",
-        "name": "Consola Xbox Series S 512 gb SSD sin lector de disco",
-        "quantity": 1
-      },
-      {
-        "id": 3,
-        "image": "https://images-na.ssl-images-amazon.com/images/I/71K-lrlmZeL._AC_UL160_SR160,160_.jpg",
-        "price": "1529.00",
-        "name": "Control Inalámbrico Xbox - Shock Blue",
-        "quantity": 1
-      }
-    ]
+    "products": []
   }
 }
