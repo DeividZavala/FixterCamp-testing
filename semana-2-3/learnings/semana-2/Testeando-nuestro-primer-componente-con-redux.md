@@ -1,6 +1,6 @@
 <img alt="logo fixter" width="300" src="https://fixter.camp/static/media/geek_completo.7e1e87a7.png" />
 
-# Redux mock Store
+# Testeando nuestro primer componente con redux parte 1
 
 Siguiendo con los temas del curso, en esta lección nos centraremos en seguir preparando nuestro entorno para poder empezar a con las pruebas en nuestra aplicación con redux.
 
