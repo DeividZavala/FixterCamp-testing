@@ -2,7 +2,7 @@
 
 # Testeando nuestro primer componente con redux parte 2
 
-En esta segunda parte lo primero que haremos en concentrarnos en mejorar las bases de lo que hemos creado hasta ahora y mejorar un poco más los utilitarios que tenemos para las pruebas.
+En esta segunda parte lo primero que haremos es concentrarnos en mejorar las bases de lo que hemos creado hasta ahora y mejorar un poco más los utilitarios que tenemos para las pruebas.
 
 Para ello crearemos una función que se llame `buildState` esta función nos va a permitir crear un estado para nuestras pruebas con las información que necesitemos.
 
@@ -13,9 +13,9 @@ const buildState = (productsChanges, cartChanges) => ({
 });
 ```
 
-Como podemos ver esta función recibe 2 argumentos, estos serán los cambios o valores que necesitemos para llenar el `state` de nuestra prueba. Es importante señalar que estos argumentos son objetos y que deben cumplir o tener la misma forma que tiene nuestro `state` real o de producción.
+Como podemos ver, esta función recibe 2 argumentos, estos serán los cambios o valores que necesitemos para llenar el `state` de nuestra prueba. Es importante señalar que estos argumentos son objetos y que deben cumplir o tener la misma forma que tiene nuestro `state` real o de producción.
 
-Hasta este punto ya estamos listos para empezar con las pruebas, podriamos tomar los conceptos que hemos visto hasta el momento, empezar con el queries que nos expone `@testing-library/react` y hacer las comprobaciones, sin embargo, hay veces en las que hacer pruebas simples como saber si el componente se esta dibujando correctamente, si estamos mostrando el `loader` o si estamos mostrando algún tipo de mensaje, es vuelve un poco tedioso, es por ello que vamos a rescatar un concepto que hemos visto en módulos anteriores, los `snapshots`.
+Hasta este punto ya estamos listos para empezar con las pruebas, podríamos tomar los conceptos que hemos visto hasta el momento, empezar con el query que nos expone `@testing-library/react` y hacer las comprobaciones. Sin embargo, hay veces en las que hacer pruebas simples como saber si el componente se está dibujando correctamente, si estamos mostrando el `loader` o si estamos mostrando algún tipo de mensaje se vuelve un poco tedioso, es por ello que vamos a rescatar un concepto que hemos visto en módulos anteriores, los `snapshots`.
 
 Para ello vamos a instalar la herramienta que necesitamos, `react-test-renderer`.
 
@@ -25,7 +25,7 @@ $ npm i react-test-renderer -D
 $yarn add react-test-renderer -D
 ```
 
-Una ves hecha la importación crearemos un nuevo `util` en `jest/utils.js`.
+Una vez hecha la importación crearemos un nuevo `util` en `jest/utils.js`.
 
 ```js
 // src/jest/utils.js
@@ -51,7 +51,7 @@ export const renderWithProviderSnapshot = (
 };
 ```
 
-Como podemos observar la única diferencia con respecto al `util` que teniamos previamente es que estamos reemplazando `render` port `renderer.create`.
+Como podemos observar la única diferencia con respecto al `util` que teníamos previamente es que estamos reemplazando `render` port `renderer.create`.
 
 Ahora regresamos al archivo `__tests__/App.test.js` y sustituimos `renderWithProvider` por `renderWithProviderSnapshot` y agregaremos el comprobación de que el snapshot coincida.
 
@@ -79,7 +79,7 @@ describe('<App /> component', () => {
 }
 ```
 
-Al correr estas pruebas vamos a tener un error que a grandes rasgos indica que hay que poner nuestro componente dentro de un `act`, este error ocurre por que se estan despachando las acciones para hacer la petición de los datos, un `dispatch`. Para resolver esto basta con hacer una condición para saber en que momento es cuando debemos hacer una petición.
+Al correr estas pruebas vamos a tener un error que a grandes rasgos indica que hay que poner nuestro componente dentro de un `act`, este error ocurre porque se están despachando las acciones para hacer la petición de los datos, un `dispatch`. Para resolver esto, basta con hacer una condición para saber en qué momento es cuando debemos hacer una petición.
 
 ```js
 // App.js
@@ -91,7 +91,7 @@ useEffect(() => {
 }, [dispatch]);
 ```
 
-Por último, debemos de mandar la información correcta necesaria para el componente muestre tanto los productos como el carrito.
+Por último, debemos de mandar la información correcta necesaria para que el componente muestre tanto los productos como el carrito.
 
 ```js
 test("Render correctly", () => {
@@ -128,15 +128,15 @@ test("Render correctly", () => {
 });
 ```
 
-Hecho esto, ahora nos centraremos en una prueba donde podamos intereactuar y detonar acciones como lo haria un usuario, para ello, la prueba que haremos será comprobar si podemos borrar un elemento del carrito, vamos a crear una prueba con practicamente las mismas bases de la anterior, tomando en cuenta que en esta prueba si usaremos `reanderWithProvider`.
+Hecho esto, ahora nos centraremos en una prueba donde podamos intereactuar y detonar acciones como lo haría un usuario, para ello, la prueba que haremos será comprobar si podemos borrar un elemento del carrito, vamos a crear una prueba con practicamente las mismas bases de la anterior, tomando en cuenta que en esta prueba si usaremos `reanderWithProvider`.
 
-Haremos un par de cambios más, el primero es fuera de nuestras pruebas, iremos al componente de item de carrito y en el `span` que contiene el icono de basura y donde esta el onClick agregaremos el `role` de `remove` después haremos la importación de `userEvent`.
+Haremos un par de cambios más, el primero es fuera de nuestras pruebas, iremos al componente de item de carrito y en el `span` que contiene el ícono de basura y donde está el onClick agregaremos el `role` de `remove` después haremos la importación de `userEvent`.
 
 Ya con las importaciones y cambios hechos, ahora escribiremos el código para detonar el click en el bóton con `role` de `remove` y haremos una comprobación para saber si nuestra acción de despacho correctamente.
 
-Es importante entender que el proceso que estamos apunto de detonar puede ser un tanto más tardado que el tiempo de ejecución de nuestra prueba por que para asegurar que todo funcione correctamente haremos el test asincrono agregando un `async-await`, donde el await estará en el `userEvent.click()`.
+Es importante entender que el proceso que estamos apunto de detonar puede ser un tanto más tardado que el tiempo de ejecución de nuestra prueba porque para asegurar que todo funcione correctamente haremos el test asíncrono agregando un `async-await`, donde el await estará en el `userEvent.click()`.
 
-Para saber que acciones se despacharon será necesario hacer uso de un método que tiene el store, `getActions()` este método nos devolverá un arreglo con todas las acciones que se despacharon durante el proceso, ahora solo nos quedaria comprobar si efectivamente todo coincide con lo esperado.
+Para saber qué acciones se despacharon será necesario hacer uso de un método que tiene el store, `getActions()` este método nos devolverá un arreglo con todas las acciones que se despacharon durante el proceso, ahora solamente nos quedaría comprobar si efectivamente todo coincide con lo esperado.
 
 El código se ve así:
 
@@ -172,7 +172,7 @@ test("Delete product from cart", async () => {
 });
 ```
 
-Como pueden ver aquí, tenemos un `undefined` en el `payload` de mi acción, esto se debe a que ese payload es el resultado que nos entrega la ejecución del `thunk` o dicho en otras palabras, la respuesta del servidor, por que a este punto podemos inferir que si queremos cambiar ese `undefined` tenemos que usar un `mock` que ya hemos hecho, `axios` entonces tendremos que hacer la importación y modificar el resultado que tenemos predefinido en el `mock`.
+Como pueden ver, aquí tenemos un `undefined` en el `payload` de mi acción, esto se debe a que ese payload es el resultado que nos entrega la ejecución del `thunk` o dicho en otras palabras, la respuesta del servidor. A este punto podemos inferir que si queremos cambiar ese `undefined` tenemos que usar un `mock` que ya hemos hecho: `axios`, entonces tendremos que hacer la importación y modificar el resultado que tenemos predefinido en el `mock`.
 
 ```js
 import mockAxios from 'axios';
@@ -184,7 +184,7 @@ mockAxios.patch.mockImplementationOnce(() => Promise.resolve({ data: { products:
 
 Lo que estamos haciendo es simplemente asegurar que devolvamos un valor diferente al `undefined`, hacemos el cambio y listo, podremos ver que todo funciona bien.
 
-Al final aun hay muchas pruebas que podemos hacer y muy probablemente que debemos hacer, en cuestion de comprobar que efectivamente se este haciendo la petición con cierto valores entre otras, sin embargo, con estas bases podemos ya empezar a hacer pruebas mucho mas robustas.
+Al final aún hay muchas pruebas que podemos hacer y muy probablemente que debemos hacer, es cuestión de comprobar que efectivamente se esté haciendo la petición con ciertos valores, entre otras, sin embargo, con estas bases podemos ya empezar a hacer pruebas mucho más robustas.
 
 ## Código final
 
