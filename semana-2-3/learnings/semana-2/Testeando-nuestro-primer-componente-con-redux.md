@@ -125,7 +125,7 @@ describe('<App /> component', () => {
 
 En este caso solamente usamos `thunk` sin embargo si nuestra aplicación usara más middlewares basta con agregarlos a este arreglo y listo.
 
-### Código completo
+## Código final
 
 ```js
 // App.test.js
