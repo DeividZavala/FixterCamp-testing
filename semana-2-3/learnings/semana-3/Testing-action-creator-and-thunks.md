@@ -2,11 +2,11 @@
 
 # Testing action creator y thunks
 
-La siguiente pieza de código que vamos a testear en nuestro archivo donde tenemos la lógica correspondiente a redux, más especificamente los `action creators` y los `thunks`.
+La siguiente pieza de código que vamos a testear es el archivo donde tenemos la lógica correspondiente a redux, más especificamente los `action creators` y los `thunks`.
 
 El archivo que vamos a testear es `productsDuck.js` y nos vamos a centrar en 2 bloques los `action creators` y los `thunks`.
 
-Para empezar vamos a crear la estructura de carpetas y archivos que hemos usado hasta el momento, creando una carpeta `__tests__` dentro de la carpeta `redux` y un archivo `productsDuck.test.js` creado la estructura de la siguiente forma.
+Para empezar, vamos a crear la estructura de carpetas y archivos que hemos usado hasta el momento, creando una carpeta `__tests__` dentro de la carpeta `redux` y un archivo `productsDuck.test.js` creando la siguiente estructura.
 
 ```
 .
@@ -120,7 +120,7 @@ test("fetch products error", async () => {
 });
 ```
 
-A partir de aquí es donde viene los cambios con respecto a lo que tenemos anteriormente, en nuestro mock de axios que es el que jest esta usando para la petición, solamente estamos considerando el caso de éxito por que será necesario que hagamos un cambio en la implementación para poder hacer el caso de error. Tenemos que importar por supuesto nuestro `mockAxios` y para hacer el cambio usamos `mockImplementationOnce`.
+A partir de aquí es donde viene los cambios con respecto a lo que tenemos anteriormente, en nuestro mock de axios que es el que jest esta usando para la petición, solamente estamos considerando el caso de éxito porque será necesario que hagamos un cambio en la implementación para poder hacer el caso de error. Tenemos que importar por supuesto nuestro `mockAxios` y para hacer el cambio usamos `mockImplementationOnce`.
 
 ```js
 // productDuck.test.js
