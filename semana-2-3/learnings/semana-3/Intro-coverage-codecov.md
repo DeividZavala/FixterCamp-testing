@@ -52,3 +52,67 @@ El segundo paso es igual de simple, en este caso lo que debemos configurar es un
 ```
 
 Como podemos ver lo que hacemos es simple, agregar una nueva llave en nuestro archivo llamada `jest` que contiene un objeto con 2 llaves más `coverageReporters` que como ya dijimos simplemente indica en que formatos queremos los reportes y `collectCoverageFrom` que indica que archivos nos interesan para estos reportes, en mi caso lo que estoy haciendo es primero indicar que me interesan todos los archivos dentro `src` con las extensiones `js o jsx` y posteriormente decirle a jest que ignore 3 archivos que son de configuración de mi aplicación por lo que no me interesa cubrirlos.
+
+## Código final de
+
+```js
+{
+  "name": "testing-msw",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "axios": "^0.21.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "4.0.1",
+    "web-vitals": "^0.2.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "test:coverage": "yarn test -- --coverage --watchAll=false",
+    "eject": "react-scripts eject",
+    "server": "json-server --watch db.json --port 4000"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "msw": "^0.24.1"
+  },
+  "jest": {
+    "coverageReporters": [
+      "json",
+      "text",
+      "html",
+      "lcov"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!src/index.js",
+      "!src/setupTests.js",
+      "!src/reportWebVitals.js"
+    ]
+  }
+}
+
+```
